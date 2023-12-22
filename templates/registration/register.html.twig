@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block main %}
+<h1>Inscription</h1>
+<form method="post">
+    {{ form_errors(registrationForm) }}
+
+    <div class="mt-4 flex flex-col items-center justify-center">
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.email, {attr:{'class':'flex flex-col mb-4 items-center justify-center rounded-lg border border-white bg-[#1F2937]'}} ) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Mot de passe',
+                attr:{'class':'flex flex-col mb-4 items-center justify-center  rounded-lg border border-white bg-[#1F2937]'}
+            }) }}
+            {{ form_row(registrationForm.pseudo, {attr:{'class':'flex flex-col mb-4 items-center justify-center rounded-lg border border-white bg-[#1F2937]'}}) }}
+        
+        {{ form_end(registrationForm) }}
+    </div>
+</form>
+{% endblock %}
